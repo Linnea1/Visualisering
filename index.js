@@ -38,7 +38,7 @@ let yearData = dataset.find(d => d.year === currentYear);
 
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
   .domain(yearData.countries.map(country => country.name));
-
+  function renderGraph() {
 let circles=svg.append("g").attr("class","viz")
 for (let country of yearData.countries) {
     circles
@@ -84,3 +84,5 @@ function updateDataset() {
 }
 
 setInterval(updateDataset, 2000);
+return svg.node();
+}
