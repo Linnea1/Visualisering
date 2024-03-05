@@ -33,18 +33,20 @@ let yAxis = svg.append("g")
   .attr("transform", `translate(${wPadding}, ${hPadding})`)
   .call(d3.axisLeft(yScale));
 
-const yearData = dataset.find(d => d.year === "2004");
+let currentYear="2004"
+let yearData = dataset.find(d => d.year === currentYear);
 
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
   .domain(yearData.countries.map(country => country.name));
 
+let circles=svg.append("g").attr("class","viz")
 for (let country of yearData.countries) {
-  const circles = svg
+    circles
     .selectAll(`.circle-${country.name}`)
     .data(country.cities)
     .enter()
     .append("circle")
-    .attr("class", d => `circle circle-${d.name}`)
+    .attr("class", d => `circle circle-${country.name}`)
     .attr("cx", d => xScale(d.labourForce))
     .attr("cy", d => yScale(d.gdp))
     .attr("r", d => Math.sqrt(d.population) * 0.01)
@@ -58,3 +60,27 @@ for (let country of yearData.countries) {
 svg.selectAll("circle").sort((a, b) => {
   return d3.descending(a.population, b.population);
 });
+
+function updateDataset() {
+  console.log(currentYear);
+  let currentYearInt = parseInt(currentYear);
+  if (currentYearInt < 2018) {
+    currentYearInt++;
+    currentYear = String(currentYearInt);
+    yearData = dataset.find(d => d.year === currentYear);
+    
+    for (let country of yearData.countries) {
+      console.log(circles.selectAll(`.circle-${country.name}`))
+      circles.selectAll(`.circle-${country.name}`)
+        .data(country.cities)
+        .transition()
+        .duration(2000)
+        .attr("cx", d => xScale(d.labourForce))
+        .attr("cy", d => yScale(d.gdp))
+        .attr("r", d => Math.sqrt(d.population) * 0.01)
+        
+    }
+  }
+}
+
+setInterval(updateDataset, 2000);
