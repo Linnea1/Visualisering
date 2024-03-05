@@ -1,3 +1,94 @@
 svg {
-    background-color: rgb(135, 220, 235);
+    background-color: black;
+}
+
+:root {
+    --darkblue: #1F4675;
+    --lightgreen: #6DC59D;
+    --white: #ffffff;
+    --font-title: 32px;
+    --font-subtitle: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--darkblue);
+  color: var(--white);
+  position: relative;
+  line-height: 3rem;
+}
+
+.banner {
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  top: 250px;
+  left: 40px;
+}
+
+h1, h2 {
+  background-color: var(--darkblue);
+}
+
+.session {
+  padding: 60px 80px;
+}
+
+.introduction,
+.visualisation,
+.preparation-content {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  gap: 50px;
+}
+
+.introduction,
+.target,
+.preparation {
+  background-color: var(--lightgreen);
+}
+
+.visualisation-content {
+  width: 30%;
+}
+
+.visualisation-content h3 {
+  text-align: center;
+}
+
+.visualisation-content h3,
+.target h3,
+.source h3,
+.preparation h3,
+.learning h3 {
+  font-size: var(--font-title);
+  margin-bottom: 20px;
+}
+
+span {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.hightlight {
+  color: orange;
+}
+
+.preparation-text h4,
+.learning h4 {
+  font-size: var(--font-subtitle);
+}
+
+.draft {
+  height: 50vh;
 }
