@@ -25,8 +25,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1546015, labourForce: 17110790, population: 33886538 },
-          { name: "Osaka", gdp: 626921, labourForce: 7998060, population: 17278072 },
+          { name: "Hiroshima", gdp: 52245, labourForce: 699720, population: 1482519},
+          { name: "Mito", gdp: 24762, labourForce: 355680, population: 742045},
           { name: "Nagoya", gdp: 352597, labourForce: 4298650, population: 8455361 },
           { name: "Fukuoka", gdp: 85910, labourForce: 1284040, population: 2680921 },
           { name: "Sapporo", gdp: 74740, labourForce: 1077120, population: 2296381 },
@@ -80,8 +80,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1581172, labourForce: 17071710, population: 34163372 },
-          { name: "Osaka", gdp: 634336, labourForce: 7981620, population: 17283887 },
+          { name: "Hiroshima", gdp: 54567, labourForce: 701680, population: 1481489},
+          { name: "Mito", gdp: 25217, labourForce: 356400, population: 738569},
           { name: "Nagoya", gdp: 364203, labourForce: 4310190, population: 8510436 },
           { name: "Fukuoka", gdp: 87882, labourForce: 1282160, population: 2676229 },
           { name: "Sapporo", gdp: 73750, labourForce: 1077120, population: 2289871 },
@@ -135,8 +135,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1695091, labourForce: 17043040, population: 34314423 },
-          { name: "Osaka", gdp: 653196, labourForce: 7981620, population: 17273236 },
+          { name: "Hiroshima", gdp: 56262, labourForce: 689920, population: 1480460},
+          { name: "Mito", gdp: 27589, labourForce: 350640, population: 737825},
           { name: "Nagoya", gdp: 403442, labourForce: 4315960, population: 8557483 },
           { name: "Fukuoka", gdp: 89548, labourForce: 1278400, population: 2677714 },
           { name: "Sapporo", gdp: 73858, labourForce: 1056720, population: 2278885 },
@@ -190,8 +190,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1724233, labourForce: 17350560, population: 34501811 },
-          { name: "Osaka", gdp: 662371, labourForce: 7932300, population: 17257360 },
+          { name: "Hiroshima", gdp: 59010, labourForce: 678160, population: 34501811 },
+          { name: "Mito", gdp: 28841, labourForce: 349920, population: 17257360 },
           { name: "Nagoya", gdp: 414748, labourForce: 4310190, population: 8604216 },
           { name: "Fukuoka", gdp: 92154, labourForce: 1257720, population: 2678026 },
           { name: "Sapporo", gdp: 73693, labourForce: 1056720, population: 2266272 },
@@ -245,8 +245,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1704622, labourForce: 17330380, population: 34660681 },
-          { name: "Osaka", gdp: 644862, labourForce: 7891200, population: 17238638 },
+          { name: "Hiroshima", gdp: 54874, labourForce: 678160, population: 1479430},
+          { name: "Mito", gdp: 28242, labourForce: 345600, population: 737080},
           { name: "Nagoya", gdp: 376782, labourForce: 4287110, population: 8639935 },
           { name: "Fukuoka", gdp: 89377, labourForce: 1248320, population: 2676508 },
           { name: "Sapporo", gdp: 71730, labourForce: 1044480, population: 2252032 },
@@ -300,8 +300,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1616168, labourForce: 17238610, population: 34747105 },
-          { name: "Osaka", gdp: 615508, labourForce: 7817220, population: 17220243 },
+          { name: "Hiroshima", gdp: 52260, labourForce: 676200, population: 1477370},
+          { name: "Mito", gdp: 26863, labourForce: 342000, population: 735839},
           { name: "Nagoya", gdp: 361470, labourForce: 4252490, population: 8646512 },
           { name: "Fukuoka", gdp: 89659, labourForce: 1242680, population: 2675319 },
           { name: "Sapporo", gdp: 71207, labourForce: 1036320, population: 2240639 },
@@ -355,8 +355,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1663993, labourForce: 17186560, population: 35274760 },
-          { name: "Osaka", gdp: 638506, labourForce: 7710360, population: 17304230 },
+          { name: "Hiroshima", gdp: 53136, labourForce: 666400, population: 1474280},
+          { name: "Mito", gdp: 28222, labourForce: 340560, population: 734846},
           { name: "Nagoya", gdp: 364722, labourForce: 4223640, population: 8629765 },
           { name: "Fukuoka", gdp: 93252, labourForce: 1250200, population: 2684483 },
           { name: "Sapporo", gdp: 72188, labourForce: 1036320, population: 2240232 },
@@ -410,8 +410,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1723262, labourForce: 17087580, population: 35328443 },
-          { name: "Osaka", gdp: 652935, labourForce: 7644600, population: 17287319 },
+          { name: "Hiroshima", gdp: 55424, labourForce: 650720, population: 1473250},
+          { name: "Mito", gdp: 29762, labourForce: 333360, population: 737328},
           { name: "Nagoya", gdp: 380949, labourForce: 4200560, population: 8625333 },
           { name: "Fukuoka", gdp: 94161, labourForce: 1246440, population: 2687469 },
           { name: "Sapporo", gdp: 73171, labourForce: 1024080, population: 2232095 },
@@ -465,8 +465,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1718407, labourForce: 17354740, population: 35355415 },
-          { name: "Osaka", gdp: 652534, labourForce: 7718580, population: 17261483 },
+          { name: "Hiroshima", gdp: 53489, labourForce: 648760, population: 1470161},
+          { name: "Mito", gdp: 29422, labourForce: 331920, population: 734349},
           { name: "Nagoya", gdp: 398911, labourForce: 4137090, population: 8626441 },
           { name: "Fukuoka", gdp: 93307, labourForce: 1235160, population: 2689783 },
           { name: "Sapporo", gdp: 73125, labourForce: 1007760, population: 2221516 },
@@ -520,8 +520,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1753718, labourForce: 17382770, population: 35441104 },
-          { name: "Osaka", gdp: 659986, labourForce: 7718580, population: 17230085 },
+          { name: "Hiroshima", gdp: 54730, labourForce: 642880, population: 1466556},
+          { name: "Mito", gdp: 29263, labourForce: 328320, population: 730625},
           { name: "Nagoya", gdp: 410294, labourForce: 4119780, population: 8632099 },
           { name: "Fukuoka", gdp: 94854, labourForce: 1225760, population: 2691769 },
           { name: "Sapporo", gdp: 74690, labourForce: 991440, population: 2209717 },
@@ -575,8 +575,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1730445, labourForce: 17438190, population: 35565308 },
-          { name: "Osaka", gdp: 662331, labourForce: 7628160, population: 17190150 },
+          { name: "Hiroshima", gdp: 54730, labourForce: 638960, population: 1462437},
+          { name: "Mito", gdp: 29263, labourForce: 323280, population: 727646},
           { name: "Nagoya", gdp: 410516, labourForce: 4096700, population: 8633991 },
           { name: "Fukuoka", gdp: 94454, labourForce: 1218240, population: 2691347 },
           { name: "Sapporo", gdp: 74810, labourForce: 975120, population: 2197028 },
@@ -630,8 +630,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1746808, labourForce: 17463020, population: 35707770 },
-          { name: "Osaka", gdp: 665154, labourForce: 7554180, population: 17162968 },
+          { name: "Hiroshima", gdp: 58142, labourForce: 17463020, population: 1458809        },
+          { name: "Mito", gdp: 30236, labourForce: 7554180, population:724667},
           { name: "Nagoya", gdp: 413553, labourForce: 4062080, population: 8639205 },
           { name: "Fukuoka", gdp: 95805, labourForce: 1212600, population: 2708075 },
           { name: "Sapporo", gdp: 75427, labourForce: 962880, population: 2200555 },
@@ -685,8 +685,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1752653, labourForce: 17616780, population: 35884502 },
-          { name: "Osaka", gdp: 664013, labourForce: 7611720, population: 17143814 },
+          { name: "Hiroshima", gdp: 58344, labourForce: 637000, population: 1460002},
+          { name: "Mito", gdp: 30279, labourForce: 320400, population: 722741},
           { name: "Nagoya", gdp: 411058, labourForce: 4079390, population: 8652554 },
           { name: "Fukuoka", gdp: 96528, labourForce: 1206960, population: 2726887 },
           { name: "Sapporo", gdp: 75135, labourForce: 962880, population: 2204708 },
@@ -740,8 +740,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1783059, labourForce: 17859750, population: 36064684 },
-          { name: "Osaka", gdp: 681236, labourForce: 7693920, population: 17125633 },
+          { name: "Hiroshima", gdp: 58638, labourForce: 640920, population: 1462229},
+          { name: "Mito", gdp: 32037, labourForce: 318960, population: 720400},
           { name: "Nagoya", gdp: 420635, labourForce: 4102470, population: 8669761 },
           { name: "Fukuoka", gdp: 98624, labourForce: 1206960, population: 2746439 },
           { name: "Sapporo", gdp: 76505, labourForce: 958800, population: 2209107 },
@@ -795,8 +795,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Tokyo", gdp: 1800719, labourForce: 18203620, population: 36231407 },
-          { name: "Osaka", gdp: 683427, labourForce: 7751460, population: 17103838 },
+          { name: "Hiroshima", gdp: 58216, labourForce: 646800, population: 36231407 },
+          { name: "Mito", gdp: 32579, labourForce: 321120, population: 17103838 },
           { name: "Nagoya", gdp: 428132, labourForce: 4142860, population: 8681708 },
           { name: "Fukuoka", gdp: 99925, labourForce: 1214480, population: 2766437 },
           { name: "Sapporo", gdp: 77230, labourForce: 966960, population: 2212685 },
