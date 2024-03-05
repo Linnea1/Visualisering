@@ -190,8 +190,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Hiroshima", gdp: 59010, labourForce: 678160, population: 34501811 },
-          { name: "Mito", gdp: 28841, labourForce: 349920, population: 17257360 },
+          { name: "Hiroshima", gdp: 59010, labourForce: 678160, population: 1479430},
+          { name: "Mito", gdp: 28841, labourForce: 349920, population: 737080},
           { name: "Nagoya", gdp: 414748, labourForce: 4310190, population: 8604216 },
           { name: "Fukuoka", gdp: 92154, labourForce: 1257720, population: 2678026 },
           { name: "Sapporo", gdp: 73693, labourForce: 1056720, population: 2266272 },
@@ -795,8 +795,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Hiroshima", gdp: 58216, labourForce: 646800, population: 36231407 },
-          { name: "Mito", gdp: 32579, labourForce: 321120, population: 17103838 },
+          { name: "Hiroshima", gdp: 58216, labourForce: 646800, population: 1466517},
+          { name: "Mito", gdp: 32579, labourForce: 321120, population: 716515},
           { name: "Nagoya", gdp: 428132, labourForce: 4142860, population: 8681708 },
           { name: "Fukuoka", gdp: 99925, labourForce: 1214480, population: 2766437 },
           { name: "Sapporo", gdp: 77230, labourForce: 966960, population: 2212685 },
