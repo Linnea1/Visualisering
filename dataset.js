@@ -630,8 +630,8 @@ const dataset = [
       {
         name: "Japan",
         cities: [
-          { name: "Hiroshima", gdp: 58142, labourForce: 17463020, population: 1458809        },
-          { name: "Mito", gdp: 30236, labourForce: 7554180, population:724667},
+          { name: "Hiroshima", gdp: 58142, labourForce: 674820, population: 1458809        },
+          { name: "Mito", gdp: 30236, labourForce: 323280, population:724667},
           { name: "Nagoya", gdp: 413553, labourForce: 4062080, population: 8639205 },
           { name: "Fukuoka", gdp: 95805, labourForce: 1212600, population: 2708075 },
           { name: "Sapporo", gdp: 75427, labourForce: 962880, population: 2200555 },
