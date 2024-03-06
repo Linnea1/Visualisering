@@ -23,9 +23,6 @@ body {
   line-height: 3rem;
 }
 
-.banner {
-  width: 100%;
-
 .header {
   background: url(./banner.png) no-repeat center center/cover;
   height: 500px;
