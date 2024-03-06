@@ -20,22 +20,29 @@ svg {
 body {
   background-color: var(--darkblue);
   color: var(--white);
-  position: relative;
   line-height: 3rem;
 }
 
 .banner {
   width: 100%;
+
+.header {
+  background: url(./banner.png) no-repeat center center/cover;
+  height: 500px;
+  width: 100%;
+  position: relative;
 }
 
 .title {
   position: absolute;
-  top: 380px;
-  left: 40px;
+  bottom: 40px;
+  left: 50px;
+  max-width: 75%;
 }
 
 h1, h2 {
   background-color: var(--darkblue);
+  padding: 5px 20px;
 }
 
 .session {

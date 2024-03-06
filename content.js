@@ -1,12 +1,12 @@
 const body = document.querySelector("body");
 
 body.innerHTML = `
-  <img src="banner.png" alt="banner" class="banner">
-
-  <div class="title">
-    <h1>Global Urban Dynamics:</h1>
-    <h2>Exploring Population, GDP, and Labor Force in Five Countries and Their Cities</h2>
-  </div>
+  <header class="header">
+    <div class="title">
+      <h1>Global Urban Dynamics:</h1>
+      <h2>Exploring Population, GDP, and Labor Force in Five Countries and Their Cities</h2>
+    </div>
+  </header>
 
   <div class="session introduction">
     <p>Welcome to "Global Urban Dynamics," where we delve into the intricate relationship between population dynamics, economic growth, and labor  force participation across five diverse countries and their cities. Through this interactive bubble plot visualization, we invite you to explore how these key indicators intersect and influence each other within urban centers worldwide.</p>
