@@ -44,7 +44,7 @@ h1, h2 {
 }
 
 .section {
-  padding: 60px 80px;
+  padding: 60px 200px;
 }
 
 .two-columns {
@@ -83,4 +83,8 @@ h4 {
 
 .draft {
   height: 50vh;
+}
+
+.textColumn {
+  width: 700px;
 }
