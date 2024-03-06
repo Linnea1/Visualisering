@@ -55,7 +55,7 @@ body.innerHTML = `
         <p>Among the 100+ countries in these three datasets, we selected five of them and five of their corresponding cities for comparison.</p>
         <p>These five countries were chosen due to their significant differences in population size and economic background.</p>
       </div>
-      <img src="draft.png" alt="draft" class="draft">
+      <img src="draft.gif" alt="draft" class="draft">
     </div>
   </div>
 
