@@ -1,5 +1,6 @@
 svg {
     background-color: black;
+    width: 100%;
 }
 
 :root {
@@ -50,7 +51,7 @@ h1, h2 {
 .visualisation,
 .preparation-content {
   display: flex;
-  /* flex-direction: column; */
+  justify-content: space-between;
   align-items: center;
   gap: 50px;
 }
@@ -59,10 +60,6 @@ h1, h2 {
 .target,
 .preparation {
   background-color: var(--lightgreen);
-}
-
-.visualisation-content {
-  width: 30%;
 }
 
 .visualisation-content h3 {
