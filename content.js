@@ -8,12 +8,12 @@ body.innerHTML = `
     </div>
   </header>
 
-  <div class="session introduction">
+  <div class="section bg-green two-columns introduction">
     <p>Welcome to "Global Urban Dynamics," where we delve into the intricate relationship between population dynamics, economic growth, and labor  force participation across five diverse countries and their cities. Through this interactive bubble plot visualization, we invite you to explore how these key indicators intersect and influence each other within urban centers worldwide.</p>
     <img src="money.png" alt="money" class="money">
   </div>
 
-  <div class="session visualisation">
+  <div class="section two-columns visualisation">
     <div class="visualisation-content">
       <h3>Visualisation</h3>
       <ul>
@@ -26,7 +26,7 @@ body.innerHTML = `
     </div>
   </div>
 
-  <div class="session target">
+  <div class="section bg-green target">
     <h3>Target group, relevance & expected effect</h3>
     <div>
       <p><span>Target group</span>: policy makers in different countries</p>
@@ -35,7 +35,7 @@ body.innerHTML = `
     </div>
   </div>
 
-  <div class="session source">
+  <div class="section source">
     <h3>Source & Credibility</h3>
     <div>
       <p>The credibility of our source is <span class="hightlight">high</span>.</p>
@@ -43,9 +43,9 @@ body.innerHTML = `
     </div>
   </div>
 
-  <div class="session preparation">
+  <div class="section bg-green preparation">
     <h3>How did we prepare the data?</h3>
-    <div class="preparation-content">
+    <div class="two-columns preparation-content">
       <div class="preparation-text">
         <h4>Research</h4>
         <p>We were interested in the relationship between a city and its wealth, depending on various factors. We explored several topics such as crime, unemployment rate, roads and traffic, workers' income, and climate. Ultimately, we decided to delve further into the relationships between a city's population, GDP, labor force, and nationality.</p>
@@ -59,7 +59,7 @@ body.innerHTML = `
     </div>
   </div>
 
-  <div class="session learning">
+  <div class="section learning">
     <h3>Our learning</h3>
     <h4>The most difficult part</h4>
     <p></p>

@@ -43,22 +43,18 @@ h1, h2 {
   padding: 5px 20px;
 }
 
-.session {
+.section {
   padding: 60px 80px;
 }
 
-.introduction,
-.visualisation,
-.preparation-content {
+.two-columns {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 50px;
 }
 
-.introduction,
-.target,
-.preparation {
+.bg-green {
   background-color: var(--lightgreen);
 }
 
@@ -66,11 +62,7 @@ h1, h2 {
   text-align: center;
 }
 
-.visualisation-content h3,
-.target h3,
-.source h3,
-.preparation h3,
-.learning h3 {
+h3 {
   font-size: var(--font-title);
   margin-bottom: 20px;
 }
@@ -85,8 +77,7 @@ span {
   color: orange;
 }
 
-.preparation-text h4,
-.learning h4 {
+h4 {
   font-size: var(--font-subtitle);
 }
 
