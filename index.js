@@ -33,7 +33,7 @@ let yAxis = svg.append("g")
   .attr("transform", `translate(${wPadding}, ${hPadding})`)
   .call(d3.axisLeft(yScale));
 
-let currentYear="2004";
+let currentYear = "2004";
 let yearData = dataset.find(d => d.year === currentYear);
 
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
@@ -52,7 +52,7 @@ function renderGraph() {
     .attr("cx", d => xScale(d.labourForce))
     .attr("cy", d => yScale(d.gdp))
     .attr("r", d => Math.sqrt(d.population) * 0.01)
-    .attr("transform", `translate(${wPadding}, ${hViz + hPadding})`)
+    // .attr("transform", `translate(${wPadding}, ${hViz + hPadding})`)
     .attr("transform", `translate(${wPadding}, ${hPadding})`)
     .attr("fill", colorScale(country.name))
     .append("title")
