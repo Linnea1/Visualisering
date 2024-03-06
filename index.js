@@ -26,7 +26,7 @@ let svg = d3.select("body")
   .attr("height", hSvg);
 
 let yearText = svg.append("text")
-  .attr("x", 600) 
+  .attr("x", 550) 
   .attr("y", 80)        
   .attr("text-anchor", "end")
   .attr("font-size", "26px")
