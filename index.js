@@ -33,14 +33,16 @@ let yAxis = svg.append("g")
   .attr("transform", `translate(${wPadding}, ${hPadding})`)
   .call(d3.axisLeft(yScale));
 
-let currentYear="2004"
+let currentYear="2004";
 let yearData = dataset.find(d => d.year === currentYear);
 
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
   .domain(yearData.countries.map(country => country.name));
-  function renderGraph() {
-let circles=svg.append("g").attr("class","viz")
-for (let country of yearData.countries) {
+
+function renderGraph() {
+  let circles = svg.append("g").attr("class","viz");
+
+  for (let country of yearData.countries) {
     circles
     .selectAll(`.circle-${country.name}`)
     .data(country.cities)
@@ -55,34 +57,31 @@ for (let country of yearData.countries) {
     .attr("fill", colorScale(country.name))
     .append("title")
     .text(d => d.name);
-}
+  }
 
-svg.selectAll("circle").sort((a, b) => {
-  return d3.descending(a.population, b.population);
-});
+  svg.selectAll("circle").sort((a, b) => {
+    return d3.descending(a.population, b.population);
+  });
 
-function updateDataset() {
-  console.log(currentYear);
-  let currentYearInt = parseInt(currentYear);
-  if (currentYearInt < 2018) {
-    currentYearInt++;
-    currentYear = String(currentYearInt);
-    yearData = dataset.find(d => d.year === currentYear);
-    
-    for (let country of yearData.countries) {
-      console.log(circles.selectAll(`.circle-${country.name}`))
-      circles.selectAll(`.circle-${country.name}`)
-        .data(country.cities)
-        .transition()
-        .duration(2000)
-        .attr("cx", d => xScale(d.labourForce))
-        .attr("cy", d => yScale(d.gdp))
-        .attr("r", d => Math.sqrt(d.population) * 0.01)
-        
+  function updateDataset() {
+    let currentYearInt = parseInt(currentYear);
+    if (currentYearInt < 2018) {
+      currentYearInt++;
+      currentYear = String(currentYearInt);
+      yearData = dataset.find(d => d.year === currentYear);
+
+      for (let country of yearData.countries) {
+        circles.selectAll(`.circle-${country.name}`)
+          .data(country.cities)
+          .transition()
+          .duration(2000)
+          .attr("cx", d => xScale(d.labourForce))
+          .attr("cy", d => yScale(d.gdp))
+          .attr("r", d => Math.sqrt(d.population) * 0.01)
+      }
     }
   }
-}
 
-setInterval(updateDataset, 2000);
-return svg.node();
+  setInterval(updateDataset, 2000);
+  return svg.node();
 }
