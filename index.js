@@ -61,10 +61,10 @@ const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
   .domain(yearData.countries.map(country => country.name));
 
 function renderGraph() {
-  let circles = svg.append("g").attr("class","viz");
+  let circlesGroup = svg.append("g").attr("class","viz");
 
   for (let country of yearData.countries) {
-    circles
+    circlesGroup
     .selectAll(`.circle-${country.name}`)
     .data(country.cities)
     .enter()
@@ -117,7 +117,7 @@ function updateDataset() {
     yearText.text("Year: " + currentYear);
 
     for (let country of yearData.countries) {
-      circles.selectAll(`.circle-${country.name}`)
+      circlesGroup.selectAll(`.circle-${country.name}`)
         .data(country.cities)
         .transition()
         .duration(2000)
@@ -131,7 +131,7 @@ function updateDataset() {
     yearText.text("Year: " + currentYear);
 
     for (let country of yearData.countries) {
-      circles.selectAll(`.circle-${country.name}`)
+      circlesGroup.selectAll(`.circle-${country.name}`)
         .data(country.cities)
         .transition()
         .duration(2000)
