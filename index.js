@@ -52,7 +52,8 @@ let yearText = svg.append("text")
 .attr("y", 80)
 .attr("text-anchor", "end")
 .attr("font-size", "26px")
-.attr("fill", "white");
+.attr("fill", "white")
+.text("Year: 2004");
 
 let currentYear = "2004";
 let yearData = dataset.find(d => d.year === currentYear);
@@ -62,7 +63,7 @@ const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
 
 function renderGraph() {
   let circlesGroup = svg.append("g").attr("class","viz");
-  
+
 
   for (let country of yearData.countries) {
     circlesGroup
@@ -92,7 +93,7 @@ let legend = legendGroup.selectAll(".legend")
   .enter()
   .append("g")
   .attr("class", "legend")
-  .attr("transform", (d, i) => `translate(0, ${i * 30 + 20})`);
+  .attr("transform", (d, i) => `translate(0, ${i * 30 + 50})`);
 
 legend.append("rect")
   .attr("x", wSvg - 18)
@@ -124,6 +125,7 @@ let sliderYear=document.getElementById("slider").value;
     console.log(sliderYear)
     updateDataset();
   }
+
 function updateDataset() {
   let currentYearInt = parseInt(currentYear);
   if(playSvg===true){
@@ -140,7 +142,7 @@ function updateDataset() {
     yearData = dataset.find(d => d.year === currentYear);
     yearText.text("Year: " + currentYear);
   }
-  
+
   yearData = dataset.find(d => d.year === currentYear);
   yearText.text("Year: " + currentYear);
 
@@ -156,5 +158,5 @@ function updateDataset() {
       .attr("r", d => Math.sqrt(d.population) * 0.01);
   }
 
-  
+
 }
