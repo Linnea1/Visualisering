@@ -34,7 +34,7 @@ body {
 .title {
   position: absolute;
   bottom: 40px;
-  left: 185px;
+  left: 40px;
   max-width: 75%;
 }
 
@@ -44,7 +44,7 @@ h1, h2 {
 }
 
 .section {
-  padding: 60px 200px;
+  padding: 60px;
 }
 
 .two-columns {
@@ -56,6 +56,10 @@ h1, h2 {
 
 .bg-green {
   background-color: var(--lightgreen);
+}
+
+.visualisation ul {
+  width: 30vw;
 }
 
 .visualisation-content h3 {
@@ -83,8 +87,4 @@ h4 {
 
 .draft {
   height: 50vh;
-}
-
-.textColumn {
-  width: 700px;
 }
