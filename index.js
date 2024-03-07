@@ -56,38 +56,6 @@ let yAxis = svg.append("g")
   .text("GDP")
   .attr("fill", "white");
 
-const legendData = [
-  { color: "green", label: "Japan" },
-  { color: "orange", label: "Spain" },
-  { color: "blue", label: "Australia" },
-  { color: "red", label: "Poland" },
-  { color: "purple", label: "Turkey" }
-];
-
-const legend = svg.append("g")
-  .attr("class", "legend")
-  .attr("transform", `translate(800, 100)`);
-
-legend.selectAll("rect")
-  .data(legendData)
-  .enter()
-  .append("rect")
-  .attr("x", 0)
-  .attr("y", (d, i) => i * 50)   
-  .attr("width", 10)
-  .attr("height", 10)
-  .style("fill", d => d.color);
-
-legend.selectAll("text")
-  .data(legendData)
-  .enter()
-  .append("text")
-  .attr("x", 20)
-  .attr("y", (d, i) => i * 50 + 9)
-  .attr("font-size", "12px")
-  .attr("fill", "white")
-  .text(d => d.label);
-
 let currentYear = "2004";
 let yearData = dataset.find(d => d.year === currentYear);
 
@@ -144,6 +112,29 @@ function renderGraph() {
 }
 */
 
+let legendGroup = svg.append("g")
+  .attr("class", "legend-group");
+
+let legend = legendGroup.selectAll(".legend")
+  .data(colorScale.domain())
+  .enter()
+  .append("g")
+  .attr("class", "legend")
+  .attr("transform", (d, i) => `translate(0, ${i * 30 + 20})`);
+
+legend.append("rect")
+  .attr("x", wSvg - 18)
+  .attr("width", 18)
+  .attr("height", 18)
+  .style("fill", colorScale);
+
+legend.append("text")
+  .attr("x", wSvg - 24)
+  .attr("y", 9)
+  .attr("dy", ".35em")
+  .style("text-anchor", "end")
+  .style("fill", "white")
+  .text(function(d) { return d; });
 //För att få automatisk replay
 function updateDataset() {
   let currentYearInt = parseInt(currentYear);
