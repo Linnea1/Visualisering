@@ -25,13 +25,6 @@ let svg = d3.select("body")
   .attr("width", wSvg)
   .attr("height", hSvg);
 
-let yearText = svg.append("text")
-  .attr("x", 550)
-  .attr("y", 80)
-  .attr("text-anchor", "end")
-  .attr("font-size", "26px")
-  .attr("fill", "white");
-
 let xAxis = svg.append("g")
   .attr("transform", `translate(${wPadding}, ${hViz + hPadding})`)
   .call(d3.axisBottom(xScale))
@@ -43,7 +36,6 @@ let xAxis = svg.append("g")
   .text("Labour force")
   .attr("fill", "white");
 
-
 let yAxis = svg.append("g")
   .attr("transform", `translate(${wPadding}, ${hPadding})`)
   .call(d3.axisLeft(yScale))
@@ -54,6 +46,13 @@ let yAxis = svg.append("g")
   .attr("font-size", "18px")
   .text("GDP")
   .attr("fill", "white");
+
+let yearText = svg.append("text")
+.attr("x", 550)
+.attr("y", 80)
+.attr("text-anchor", "end")
+.attr("font-size", "26px")
+.attr("fill", "white");
 
 let currentYear = "2004";
 let yearData = dataset.find(d => d.year === currentYear);
@@ -127,24 +126,23 @@ function updateDataset() {
         .attr("r", d => Math.sqrt(d.population) * 0.01)
     }
   } else {
-  currentYear = "2004";
-  yearData = dataset.find(d => d.year === currentYear);
-  yearText.text("Year: " + currentYear);
+    currentYear = "2004";
+    yearData = dataset.find(d => d.year === currentYear);
+    yearText.text("Year: " + currentYear);
 
-  for (let country of yearData.countries) {
-    circles.selectAll(`.circle-${country.name}`)
-      .data(country.cities)
-      .transition()
-      .duration(2000)
-      .attr("cx", d => xScale(d.labourForce))
-      .attr("cy", d => yScale(d.gdp))
-      .attr("r", d => Math.sqrt(d.population) * 0.01);
-  }
+    for (let country of yearData.countries) {
+      circles.selectAll(`.circle-${country.name}`)
+        .data(country.cities)
+        .transition()
+        .duration(2000)
+        .attr("cx", d => xScale(d.labourForce))
+        .attr("cy", d => yScale(d.gdp))
+        .attr("r", d => Math.sqrt(d.population) * 0.01);
+    }
+}
+  setTimeout(updateDataset, 2000);
 }
 
-setTimeout(updateDataset, 2000);
-}
-
-updateDataset();
-return svg.node();
+  updateDataset();
+  return svg.node();
 }
