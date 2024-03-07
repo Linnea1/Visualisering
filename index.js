@@ -114,7 +114,7 @@ legend.append("text")
     document.getElementById("playButton").classList.toggle("paused")
     updateDataset();
   })
-  updateDataset();
+  setTimeout(updateDataset, 2000);
   return svg.node();
 }
 
