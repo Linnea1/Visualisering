@@ -56,13 +56,13 @@ let yearText = svg.append("text")
 
 let currentYear = "2004";
 let yearData = dataset.find(d => d.year === currentYear);
-
+let playSvg=true;
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
   .domain(yearData.countries.map(country => country.name));
 
 function renderGraph() {
   let circlesGroup = svg.append("g").attr("class","viz");
-  let playSvg=true;
+  
 
   for (let country of yearData.countries) {
     circlesGroup
@@ -108,64 +108,48 @@ legend.append("text")
   .style("fill", "white")
   .text(function(d) { return d; });
 
-  let sliderYear=document.getElementById("slider").value;
+  updateDataset();
+  return svg.node();
+}
+
+let sliderYear=document.getElementById("slider").value;
   slider.onchange = ()=>{
     playSvg=false;
     sliderYear=document.getElementById("slider").value;
     console.log(sliderYear)
     updateDataset();
   }
-  
-  function updateDataset() {
-    let currentYearInt = parseInt(currentYear);
-    if(playSvg===true){
-      if (currentYearInt < 2018) {
-        currentYearInt++;
-        document.getElementById("slider").value=currentYearInt
-        currentYear = String(currentYearInt);
-        yearData = dataset.find(d => d.year === currentYear);
-        yearText.text("Year: " + currentYear);
-        
-        datasetChange()
-        setTimeout(updateDataset, 2000);
-
-      } else {
-        currentYear = "2004";
-        document.getElementById("slider").value=parseInt(currentYear);
-        yearData = dataset.find(d => d.year === currentYear);
-        yearText.text("Year: " + currentYear);
-  
-        datasetChange()
-        setTimeout(updateDataset, 2000);
-      }
-    }else{
-      currentYear = String(document.getElementById("slider").value);
-      yearData = dataset.find(d => d.year === currentYear);
-      yearText.text("Year: " + currentYear);
-
-      datasetChange()
+function updateDataset() {
+  let currentYearInt = parseInt(currentYear);
+  if(playSvg===true){
+    if (currentYearInt < 2018) {
+      currentYearInt++;
+      currentYear = String(currentYearInt);
+      document.getElementById("slider").value=currentYearInt
+    } else {
+      currentYear = "2004";
     }
-
-    
+    setTimeout(updateDataset, 2000);
+  }else{
+    currentYear = String(document.getElementById("slider").value);
+    yearData = dataset.find(d => d.year === currentYear);
+    yearText.text("Year: " + currentYear);
   }
   
-  function datasetChange(){
-    for (let country of yearData.countries) {
-      circlesGroup.selectAll(`.circle-${country.name}`)
-        .data(country.cities)
-        .transition()
-        .duration(2000)
-        .attr("cx", d => xScale(d.labourForce))
-        .attr("cy", d => yScale(d.gdp))
-        .attr("r", d => Math.sqrt(d.population) * 0.01)
-    }
+  yearData = dataset.find(d => d.year === currentYear);
+  yearText.text("Year: " + currentYear);
+
+  let circlesGroup = svg.select(".viz");
+
+  for (let country of yearData.countries) {
+    circlesGroup.selectAll(`.circle-${country.name}`)
+      .data(country.cities)
+      .transition()
+      .duration(2000)
+      .attr("cx", d => xScale(d.labourForce))
+      .attr("cy", d => yScale(d.gdp))
+      .attr("r", d => Math.sqrt(d.population) * 0.01);
   }
-  
 
-  updateDataset();
-  return svg.node();
-}
-
-function toggleButton(){
   
 }
