@@ -119,12 +119,13 @@ legend.append("text")
 }
 
 let sliderYear=document.getElementById("slider").value;
-  slider.onchange = ()=>{
-    playSvg=false;
-    sliderYear=document.getElementById("slider").value;
-    console.log(sliderYear)
-    updateDataset();
-  }
+slider.onchange = ()=>{
+  playSvg=false;
+  document.getElementById("playButton").classList.toggle("paused")
+  sliderYear=document.getElementById("slider").value;
+  console.log(sliderYear)
+  updateDataset();
+}
 
 function updateDataset() {
   let currentYearInt = parseInt(currentYear);
@@ -157,6 +158,4 @@ function updateDataset() {
       .attr("cy", d => yScale(d.gdp))
       .attr("r", d => Math.sqrt(d.population) * 0.01);
   }
-
-
 }
