@@ -69,7 +69,7 @@ function renderGraph() {
     .data(country.cities)
     .enter()
     .append("circle")
-    .attr("class", d => `circle circle-${country.name}`)
+    .attr("class", `circle circle-${country.name}`)
     .attr("cx", d => xScale(d.labourForce))
     .attr("cy", d => yScale(d.gdp))
     .attr("r", d => Math.sqrt(d.population) * 0.01)
