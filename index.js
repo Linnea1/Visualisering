@@ -62,6 +62,7 @@ const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
 
 function renderGraph() {
   let circlesGroup = svg.append("g").attr("class","viz");
+  let playSvg=true;
 
   for (let country of yearData.countries) {
     circlesGroup
@@ -107,15 +108,48 @@ legend.append("text")
   .style("fill", "white")
   .text(function(d) { return d; });
 
-function updateDataset() {
-  let currentYearInt = parseInt(currentYear);
-  if (currentYearInt < 2018) {
-    currentYearInt++;
-    currentYear = String(currentYearInt);
-    yearData = dataset.find(d => d.year === currentYear);
+  let sliderYear=document.getElementById("slider").value;
+  slider.onchange = ()=>{
+    playSvg=false;
+    sliderYear=document.getElementById("slider").value;
+    console.log(sliderYear)
+    updateDataset();
+  }
+  
+  function updateDataset() {
+    let currentYearInt = parseInt(currentYear);
+    if(playSvg===true){
+      if (currentYearInt < 2018) {
+        currentYearInt++;
+        document.getElementById("slider").value=currentYearInt
+        currentYear = String(currentYearInt);
+        yearData = dataset.find(d => d.year === currentYear);
+        yearText.text("Year: " + currentYear);
+        
+        datasetChange()
+        setTimeout(updateDataset, 2000);
 
-    yearText.text("Year: " + currentYear);
+      } else {
+        currentYear = "2004";
+        document.getElementById("slider").value=parseInt(currentYear);
+        yearData = dataset.find(d => d.year === currentYear);
+        yearText.text("Year: " + currentYear);
+  
+        datasetChange()
+        setTimeout(updateDataset, 2000);
+      }
+    }else{
+      currentYear = String(document.getElementById("slider").value);
+      yearData = dataset.find(d => d.year === currentYear);
+      yearText.text("Year: " + currentYear);
 
+      datasetChange()
+    }
+
+    
+  }
+  
+  function datasetChange(){
     for (let country of yearData.countries) {
       circlesGroup.selectAll(`.circle-${country.name}`)
         .data(country.cities)
@@ -125,24 +159,13 @@ function updateDataset() {
         .attr("cy", d => yScale(d.gdp))
         .attr("r", d => Math.sqrt(d.population) * 0.01)
     }
-  } else {
-    currentYear = "2004";
-    yearData = dataset.find(d => d.year === currentYear);
-    yearText.text("Year: " + currentYear);
-
-    for (let country of yearData.countries) {
-      circlesGroup.selectAll(`.circle-${country.name}`)
-        .data(country.cities)
-        .transition()
-        .duration(2000)
-        .attr("cx", d => xScale(d.labourForce))
-        .attr("cy", d => yScale(d.gdp))
-        .attr("r", d => Math.sqrt(d.population) * 0.01);
-    }
-}
-  setTimeout(updateDataset, 2000);
-}
+  }
+  
 
   updateDataset();
   return svg.node();
+}
+
+function toggleButton(){
+  
 }

@@ -48,10 +48,11 @@ h1, h2 {
 }
 
 .two-columns {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 10px 50px;
 }
 
 .bg-green {
@@ -87,4 +88,23 @@ h4 {
 
 .draft {
   height: 50vh;
+}
+
+.sliderContainer{
+  width: 100%;
+  display: flex;
+  gap:10px;
+}
+.slider{
+  flex-grow: 1;
+}
+
+button{
+  background-color: #ffffff00;
+  border:none;
+  background-image: url("pause.png");
+  background-position: center;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
 }
