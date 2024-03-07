@@ -75,7 +75,6 @@ function renderGraph() {
     .attr("cx", d => xScale(d.labourForce))
     .attr("cy", d => yScale(d.gdp))
     .attr("r", d => Math.sqrt(d.population) * 0.01)
-    // .attr("transform", `translate(${wPadding}, ${hViz + hPadding})`)
     .attr("transform", `translate(${wPadding}, ${hPadding})`)
     .attr("fill", colorScale(country.name))
     .append("title")
@@ -85,32 +84,6 @@ function renderGraph() {
   svg.selectAll("circle").sort((a, b) => {
     return d3.descending(a.population, b.population);
   });
-/*
-  function updateDataset() {
-    let currentYearInt = parseInt(currentYear);
-    if (currentYearInt < 2018) {
-      currentYearInt++;
-      currentYear = String(currentYearInt);
-      yearData = dataset.find(d => d.year === currentYear);
-
-      yearText.text("Year: " + currentYear);
-
-      for (let country of yearData.countries) {
-        circles.selectAll(`.circle-${country.name}`)
-          .data(country.cities)
-          .transition()
-          .duration(2000)
-          .attr("cx", d => xScale(d.labourForce))
-          .attr("cy", d => yScale(d.gdp))
-          .attr("r", d => Math.sqrt(d.population) * 0.01)
-      }
-    }
-  }
-
-  setInterval(updateDataset, 2000);
-  return svg.node();
-}
-*/
 
 let legendGroup = svg.append("g")
   .attr("class", "legend-group");
@@ -135,7 +108,7 @@ legend.append("text")
   .style("text-anchor", "end")
   .style("fill", "white")
   .text(function(d) { return d; });
-//För att få automatisk replay
+
 function updateDataset() {
   let currentYearInt = parseInt(currentYear);
   if (currentYearInt < 2018) {
