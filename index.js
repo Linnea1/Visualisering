@@ -107,42 +107,32 @@ legend.append("text")
   .style("fill", "white")
   .text(function(d) { return d; });
 
+  updateDataset();
+  return svg.node();
+}
+
 function updateDataset() {
   let currentYearInt = parseInt(currentYear);
   if (currentYearInt < 2018) {
     currentYearInt++;
     currentYear = String(currentYearInt);
-    yearData = dataset.find(d => d.year === currentYear);
-
-    yearText.text("Year: " + currentYear);
-
-    for (let country of yearData.countries) {
-      circlesGroup.selectAll(`.circle-${country.name}`)
-        .data(country.cities)
-        .transition()
-        .duration(2000)
-        .attr("cx", d => xScale(d.labourForce))
-        .attr("cy", d => yScale(d.gdp))
-        .attr("r", d => Math.sqrt(d.population) * 0.01)
-    }
   } else {
     currentYear = "2004";
-    yearData = dataset.find(d => d.year === currentYear);
-    yearText.text("Year: " + currentYear);
+  }
+  yearData = dataset.find(d => d.year === currentYear);
+  yearText.text("Year: " + currentYear);
 
-    for (let country of yearData.countries) {
-      circlesGroup.selectAll(`.circle-${country.name}`)
-        .data(country.cities)
-        .transition()
-        .duration(2000)
-        .attr("cx", d => xScale(d.labourForce))
-        .attr("cy", d => yScale(d.gdp))
-        .attr("r", d => Math.sqrt(d.population) * 0.01);
-    }
-}
+  let circlesGroup = svg.select(".viz");
+
+  for (let country of yearData.countries) {
+    circlesGroup.selectAll(`.circle-${country.name}`)
+      .data(country.cities)
+      .transition()
+      .duration(2000)
+      .attr("cx", d => xScale(d.labourForce))
+      .attr("cy", d => yScale(d.gdp))
+      .attr("r", d => Math.sqrt(d.population) * 0.01);
+  }
+
   setTimeout(updateDataset, 2000);
-}
-
-  updateDataset();
-  return svg.node();
 }
