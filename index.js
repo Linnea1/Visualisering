@@ -93,7 +93,7 @@ let legend = legendGroup.selectAll(".legend")
   .enter()
   .append("g")
   .attr("class", "legend")
-  .attr("transform", (d, i) => `translate(0, ${i * 30 + 20})`);
+  .attr("transform", (d, i) => `translate(0, ${i * 30 + 50})`);
 
 legend.append("rect")
   .attr("x", wSvg - 18)
