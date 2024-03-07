@@ -108,6 +108,11 @@ legend.append("text")
   .style("fill", "white")
   .text(function(d) { return d; });
 
+  document.getElementById("playButton").addEventListener("click",()=>{
+    playSvg=!playSvg;
+    document.getElementById("playButton").classList.toggle("paused")
+    updateDataset();
+  })
   updateDataset();
   return svg.node();
 }
