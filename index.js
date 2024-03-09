@@ -100,7 +100,6 @@ slider.onchange = ()=>{
   playSvg=false;
   document.getElementById("playButton").classList.toggle("paused")
   sliderYear=document.getElementById("slider").value;
-  console.log(sliderYear)
   updateDataset();
 }
 
