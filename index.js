@@ -127,7 +127,7 @@ function renderLegend() {
   .attr("dy", ".35em")
   .style("text-anchor", "end")
   .style("fill", "white")
-  .text(function(d) { return d; });
+  .text(d => d);
 }
 
 function updateDataset() {
