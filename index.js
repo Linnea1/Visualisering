@@ -84,6 +84,27 @@ function renderGraph() {
     return d3.descending(a.population, b.population);
   });
 
+  renderLegend();
+
+  document.getElementById("playButton").addEventListener("click",()=>{
+    playSvg=!playSvg;
+    document.getElementById("playButton").classList.toggle("paused")
+    updateDataset();
+  })
+  setTimeout(updateDataset, 2000);
+  return svg.node();
+}
+
+let sliderYear=document.getElementById("slider").value;
+slider.onchange = ()=>{
+  playSvg=false;
+  document.getElementById("playButton").classList.toggle("paused")
+  sliderYear=document.getElementById("slider").value;
+  console.log(sliderYear)
+  updateDataset();
+}
+
+function renderLegend() {
   let legendGroup = svg.append("g")
   .attr("class", "legend-group");
 
@@ -107,23 +128,6 @@ function renderGraph() {
   .style("text-anchor", "end")
   .style("fill", "white")
   .text(function(d) { return d; });
-
-  document.getElementById("playButton").addEventListener("click",()=>{
-    playSvg=!playSvg;
-    document.getElementById("playButton").classList.toggle("paused")
-    updateDataset();
-  })
-  setTimeout(updateDataset, 2000);
-  return svg.node();
-}
-
-let sliderYear=document.getElementById("slider").value;
-slider.onchange = ()=>{
-  playSvg=false;
-  document.getElementById("playButton").classList.toggle("paused")
-  sliderYear=document.getElementById("slider").value;
-  console.log(sliderYear)
-  updateDataset();
 }
 
 function updateDataset() {
