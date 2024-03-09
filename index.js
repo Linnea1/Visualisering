@@ -21,31 +21,31 @@ let xScale = d3.scaleLinear([0, maxLabourForce * 1.1], [0, wViz]);
 let yScale = d3.scaleLinear([0, maxGDP * 1.1], [hViz, 0]);
 
 let svg = d3.select("body")
-  .append("svg")
-  .attr("width", wSvg)
-  .attr("height", hSvg);
+.append("svg")
+.attr("width", wSvg)
+.attr("height", hSvg);
 
 let xAxis = svg.append("g")
-  .attr("transform", `translate(${wPadding}, ${hViz + hPadding})`)
-  .call(d3.axisBottom(xScale))
-  .append("text")
-  .attr("x", 700)
-  .attr("y", 10)
-  .attr("text-anchor", "middle")
-  .attr("font-size", "18px")
-  .text("Labour force")
-  .attr("fill", "white");
+.attr("transform", `translate(${wPadding}, ${hViz + hPadding})`)
+.call(d3.axisBottom(xScale))
+.append("text")
+.attr("x", 700)
+.attr("y", 10)
+.attr("text-anchor", "middle")
+.attr("font-size", "18px")
+.text("Labour force")
+.attr("fill", "white");
 
 let yAxis = svg.append("g")
-  .attr("transform", `translate(${wPadding}, ${hPadding})`)
-  .call(d3.axisLeft(yScale))
-  .append("text")
-  .attr("x", 0)
-  .attr("y", -20)
-  .attr("text-anchor", "middle")
-  .attr("font-size", "18px")
-  .text("GDP")
-  .attr("fill", "white");
+.attr("transform", `translate(${wPadding}, ${hPadding})`)
+.call(d3.axisLeft(yScale))
+.append("text")
+.attr("x", 0)
+.attr("y", -20)
+.attr("text-anchor", "middle")
+.attr("font-size", "18px")
+.text("GDP")
+.attr("fill", "white");
 
 let yearText = svg.append("text")
 .attr("x", 550)
@@ -59,11 +59,10 @@ let currentYear = "2004";
 let yearData = dataset.find(d => d.year === currentYear);
 let playSvg=true;
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
-  .domain(yearData.countries.map(country => country.name));
+.domain(yearData.countries.map(country => country.name));
 
 function renderGraph() {
   let circlesGroup = svg.append("g").attr("class","viz");
-
 
   for (let country of yearData.countries) {
     circlesGroup
@@ -85,23 +84,23 @@ function renderGraph() {
     return d3.descending(a.population, b.population);
   });
 
-let legendGroup = svg.append("g")
+  let legendGroup = svg.append("g")
   .attr("class", "legend-group");
 
-let legend = legendGroup.selectAll(".legend")
+  let legend = legendGroup.selectAll(".legend")
   .data(colorScale.domain())
   .enter()
   .append("g")
   .attr("class", "legend")
   .attr("transform", (d, i) => `translate(0, ${i * 30 + 50})`);
 
-legend.append("rect")
+  legend.append("rect")
   .attr("x", wSvg - 18)
   .attr("width", 18)
   .attr("height", 18)
   .style("fill", colorScale);
 
-legend.append("text")
+  legend.append("text")
   .attr("x", wSvg - 24)
   .attr("y", 9)
   .attr("dy", ".35em")
@@ -151,11 +150,11 @@ function updateDataset() {
 
   for (let country of yearData.countries) {
     circlesGroup.selectAll(`.circle-${country.name}`)
-      .data(country.cities)
-      .transition()
-      .duration(2000)
-      .attr("cx", d => xScale(d.labourForce))
-      .attr("cy", d => yScale(d.gdp))
-      .attr("r", d => Math.sqrt(d.population) * 0.01);
+    .data(country.cities)
+    .transition()
+    .duration(2000)
+    .attr("cx", d => xScale(d.labourForce))
+    .attr("cy", d => yScale(d.gdp))
+    .attr("r", d => Math.sqrt(d.population) * 0.01);
   }
 }
