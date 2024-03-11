@@ -199,8 +199,8 @@ h4 {
   height: 400px;
 }
 
-.imageBreaker {
-  background-image: url(imageBreaker.png);
+.imgBreaker {
+  background-image: url(imgBreaker.png);
   height: 200px;
   position: absolute;
   background-repeat: no-repeat;
