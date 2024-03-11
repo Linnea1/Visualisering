@@ -15,15 +15,12 @@ function createCountryTable(dataset) {
 
     const countryName = document.createElement("p");
     countryName.textContent = country.name;
-    countryName.style.fontWeight = "bold";
-    countryName.style.fontSize = "1.5vw";
     div.appendChild(countryName);
 
     const citiesList = document.createElement("ul");
     country.cities.forEach((city) => {
       const cityItem = document.createElement("li");
       cityItem.textContent = `${city.name}`;
-      cityItem.style.fontSize = "1vw";
       citiesList.appendChild(cityItem);
     });
     div.appendChild(citiesList);
