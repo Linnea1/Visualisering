@@ -65,7 +65,7 @@ let xAxis = svg.append("g")
 .attr("text-anchor", "middle")
 .attr("font-size", "18px")
 .text("Labour force")
-.attr("fill", "white");
+.attr("fill", "black");
 
 let yAxis = svg.append("g")
 .attr("transform", `translate(${wPadding}, ${hPadding})`)
@@ -76,14 +76,14 @@ let yAxis = svg.append("g")
 .attr("text-anchor", "middle")
 .attr("font-size", "18px")
 .text("GDP")
-.attr("fill", "white");
+.attr("fill", "black");
 
 let yearText = svg.append("text")
 .attr("x", 550)
 .attr("y", 80)
 .attr("text-anchor", "end")
 .attr("font-size", "26px")
-.attr("fill", "white")
+.attr("fill", "black")
 .text("Year: 2004");
 
 let currentYear = "2004";
@@ -156,7 +156,7 @@ function renderLegend() {
   .attr("y", 9)
   .attr("dy", ".35em")
   .style("text-anchor", "end")
-  .style("fill", "white")
+  .style("fill", "black")
   .text(d => d);
 }
 

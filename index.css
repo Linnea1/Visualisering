@@ -1,6 +1,6 @@
 svg {
-    background-color: #000000;
-    width: 75%;
+    background-color: #ffffff;
+    width: 900px;
 }
 
 :root {
@@ -23,7 +23,7 @@ body {
   color: var(--black);
   line-height: 3rem;
   font-family: "Roboto", sans-serif;
-
+  overflow-x: hidden;
 }
 
 main {
@@ -90,6 +90,9 @@ h1, h2 {
   background-color: var(--lightgreen);
 }
 */
+.visualisation-content {
+  width: 850px;
+}
 
 .visualisation ul {
   width: 30vw;
@@ -128,8 +131,16 @@ h4 {
   display: flex;
   gap:10px;
 }
+
 .slider{
   flex-grow: 1;
+}
+
+.visualisation-content > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
 }
 
 #playButton{
@@ -190,4 +201,23 @@ h4 {
 footer {
   padding: 50px;
   background-color: #62aa58;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+}
+
+.noLine {
+  border-bottom: none;
+}
+
+.target > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.learning {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
