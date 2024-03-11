@@ -1,12 +1,13 @@
 svg {
-    background-color: black;
-    width: 100%;
+    background-color: #000000;
+    width: 75%;
 }
 
 :root {
     --darkblue: #1F4675;
     --lightgreen: #6DC59D;
     --white: #ffffff;
+    --black: #000000;
     --font-title: 32px;
     --font-subtitle: 20px;
 }
@@ -15,49 +16,80 @@ svg {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background-color: var(--darkblue);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--black);
   line-height: 3rem;
+  font-family: "Roboto", sans-serif;
+
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.mainContainer {
+  max-width: 70%;
 }
 
 .header {
-  background: url(./banner.png) no-repeat center center/cover;
+  background: url(./header.png) no-repeat center center/cover;
   height: 500px;
   width: 100%;
-  position: relative;
+  justify-content: end;
+  display: flex;
+  flex-direction: column;
+  /*
+  position: relative; */
 }
 
 .title {
+  /*
   position: absolute;
   bottom: 40px;
+  */
+  color: var(--white);
+  /*
   left: 40px;
   max-width: 75%;
+  */
+  width: 100%;
+  background-color: #62aa58;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px 0px;
+  font-family: "Space Mono", monospace;
+
 }
 
 h1, h2 {
-  background-color: var(--darkblue);
-  padding: 5px 20px;
+  padding: 0px 60px;
+  width: 70%;
 }
 
 .section {
   padding: 60px;
+  border-bottom: gray 1px solid;
 }
 
 .two-columns {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-columns: 3fr 1fr;
   justify-content: center;
   align-items: center;
   gap: 10px 50px;
 }
 
+/*
 .bg-green {
   background-color: var(--lightgreen);
 }
+*/
 
 .visualisation ul {
   width: 30vw;
@@ -70,6 +102,7 @@ h1, h2 {
 h3 {
   font-size: var(--font-title);
   margin-bottom: 20px;
+  font-family: "Space Mono", monospace;
 }
 
 span {
@@ -111,4 +144,50 @@ h4 {
 }
 #playButton.paused{
   background-image: url("play-button.png");
+}
+
+.square {
+  width: calc(20% - 20px); 
+  margin-right: 20px;
+  float: left;
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+.square:last-child {
+  margin-right: 0;
+}
+
+.square h3 {
+  margin-top: 0;
+}
+
+.square ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.square li {
+  margin-bottom: 5px;
+}
+
+.imgBreakerDiv {
+  height: 400px;
+  background-color: #7fca7e;
+  width: 100vw;
+}
+
+.imgBreaker {
+  position: absolute;
+  left: 0;
+  height: 400px;
+}
+
+.countryTable {
+  height: 500px;
+}
+
+footer {
+  padding: 50px;
+  background-color: #62aa58;
 }
