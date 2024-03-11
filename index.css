@@ -35,7 +35,7 @@ main {
 }
 
 .header {
-  background: url(./header.png) no-repeat center center/cover;
+  background: url(./header.jpg) no-repeat center center/cover;
   height: 600px;
   width: 100%;
   justify-content: end;
@@ -200,7 +200,7 @@ h4 {
 }
 
 .imgBreaker {
-  background-image: url(imgBreaker.png);
+  background-image: url(imgBreaker.jpg);
   height: 200px;
   position: absolute;
   background-repeat: no-repeat;
