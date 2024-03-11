@@ -20,7 +20,7 @@ for (let year of dataset) {
 function createCountryTable(dataset) {
   const container = document.getElementById("container");
 
-  const firstYearData = dataset[0]; // Get the first element in the dataset array
+  const firstYearData = dataset[0];
 
   firstYearData.countries.forEach((country) => {
     const div = document.createElement("div");
@@ -46,7 +46,6 @@ function createCountryTable(dataset) {
 }
 
 createCountryTable(dataset);
-
 
 let xScale = d3.scaleLinear([0, maxLabourForce * 1.1], [0, wViz]);
 let yScale = d3.scaleLinear([0, maxGDP * 1.1], [hViz, 0]);
@@ -116,10 +115,11 @@ function renderGraph() {
   });
 
   renderLegend();
-
+  
+  checkIcon(playSvg)
   document.getElementById("playButton").addEventListener("click",()=>{
     playSvg=!playSvg;
-    document.getElementById("playButton").classList.toggle("paused")
+    checkIcon(playSvg);
     updateDataset();
   })
   setTimeout(updateDataset, 2000);
@@ -129,7 +129,7 @@ function renderGraph() {
 let sliderYear=document.getElementById("slider").value;
 slider.onchange = ()=>{
   playSvg=false;
-  document.getElementById("playButton").classList.toggle("paused")
+  checkIcon(playSvg);
   sliderYear=document.getElementById("slider").value;
   updateDataset();
 }
@@ -190,5 +190,15 @@ function updateDataset() {
     .attr("cx", d => xScale(d.labourForce))
     .attr("cy", d => yScale(d.gdp))
     .attr("r", d => Math.sqrt(d.population) * 0.01);
+  }
+}
+
+function checkIcon(playSvg){
+  if(playSvg===true){
+    document.getElementById("playButton").classList.remove("play");
+    document.getElementById("playButton").classList.add("pause");
+  }else{
+    document.getElementById("playButton").classList.remove("pause");
+    document.getElementById("playButton").classList.add("play");
   }
 }
