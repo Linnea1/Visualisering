@@ -79,7 +79,6 @@ h1, h2 {
   justify-content: center;
   align-items: center;
   gap: 10px 50px;
-  margin-top: 50px;
 }
 
 .visualisation-content {
@@ -189,9 +188,7 @@ h4 {
 }
 
 .imgBreakerDiv {
-  height: 400px;
-  background-color: #7fca7e;
-  width: 100vw;
+  height: 200px;
   display: flex;
   align-items: center;
 }
@@ -202,12 +199,22 @@ h4 {
   height: 400px;
 }
 
+.imageBreaker {
+  background-image: url(imageBreaker.png);
+  height: 200px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0;
+  width: 100%;
+}
+
 .imgBreakerText {
   font-size: 50px;
   color: white;
   z-index: 1;
   position: absolute;
-  left: 40%;
+  text-align: center;
 }
 
 .countryTable {
