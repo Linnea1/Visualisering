@@ -17,36 +17,6 @@ for (let year of dataset) {
   }
 }
 
-function createCountryTable(dataset) {
-  const container = document.getElementById("container");
-
-  const firstYearData = dataset[0];
-
-  firstYearData.countries.forEach((country) => {
-    const div = document.createElement("div");
-    div.classList.add("square");
-
-    const countryName = document.createElement("p");
-    countryName.textContent = country.name;
-    countryName.style.fontWeight = "bold"; 
-    countryName.style.fontSize = "1.5vw"; 
-    div.appendChild(countryName);
-
-    const citiesList = document.createElement("ul");
-    country.cities.forEach((city) => {
-      const cityItem = document.createElement("li");
-      cityItem.textContent = `${city.name}`;
-      cityItem.style.fontSize = "1vw"; 
-      citiesList.appendChild(cityItem);
-    });
-    div.appendChild(citiesList);
-
-    container.appendChild(div);
-  });
-}
-
-createCountryTable(dataset);
-
 let xScale = d3.scaleLinear([0, maxLabourForce * 1.1], [0, wViz]);
 let yScale = d3.scaleLinear([0, maxGDP * 1.1], [hViz, 0]);
 
@@ -87,7 +57,8 @@ let yearText = svg.append("text")
 
 let currentYear = "2004";
 let yearData = dataset.find(d => d.year === currentYear);
-let playSvg=true;
+let playSvg = true;
+
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
 .domain(yearData.countries.map(country => country.name));
 
@@ -115,23 +86,49 @@ function renderGraph() {
   });
 
   renderLegend();
-  
-  checkIcon(playSvg)
+  checkIcon(playSvg);
+
   document.getElementById("playButton").addEventListener("click",()=>{
     playSvg=!playSvg;
     checkIcon(playSvg);
     updateDataset();
   })
+
   setTimeout(updateDataset, 2000);
   return svg.node();
 }
 
-let sliderYear=document.getElementById("slider").value;
-slider.onchange = ()=>{
-  playSvg=false;
-  checkIcon(playSvg);
-  sliderYear=document.getElementById("slider").value;
-  updateDataset();
+function updateDataset() {
+  let currentYearInt = parseInt(currentYear);
+  if(playSvg === true){
+    if (currentYearInt < 2018) {
+      currentYearInt++;
+      currentYear = String(currentYearInt);
+      document.getElementById("slider").value = currentYearInt
+    } else {
+      currentYear = "2004";
+    }
+    setTimeout(updateDataset, 2000);
+  } else{
+    currentYear = String(document.getElementById("slider").value);
+    yearData = dataset.find(d => d.year === currentYear);
+    yearText.text("Year: " + currentYear);
+  }
+
+  yearData = dataset.find(d => d.year === currentYear);
+  yearText.text("Year: " + currentYear);
+
+  let circlesGroup = svg.select(".viz");
+
+  for (let country of yearData.countries) {
+    circlesGroup.selectAll(`.circle-${country.name}`)
+    .data(country.cities)
+    .transition()
+    .duration(2000)
+    .attr("cx", d => xScale(d.labourForce))
+    .attr("cy", d => yScale(d.gdp))
+    .attr("r", d => Math.sqrt(d.population) * 0.01);
+  }
 }
 
 function renderLegend() {
@@ -160,44 +157,19 @@ function renderLegend() {
   .text(d => d);
 }
 
-function updateDataset() {
-  let currentYearInt = parseInt(currentYear);
-  if(playSvg===true){
-    if (currentYearInt < 2018) {
-      currentYearInt++;
-      currentYear = String(currentYearInt);
-      document.getElementById("slider").value=currentYearInt
-    } else {
-      currentYear = "2004";
-    }
-    setTimeout(updateDataset, 2000);
-  }else{
-    currentYear = String(document.getElementById("slider").value);
-    yearData = dataset.find(d => d.year === currentYear);
-    yearText.text("Year: " + currentYear);
-  }
-
-  yearData = dataset.find(d => d.year === currentYear);
-  yearText.text("Year: " + currentYear);
-
-  let circlesGroup = svg.select(".viz");
-
-  for (let country of yearData.countries) {
-    circlesGroup.selectAll(`.circle-${country.name}`)
-    .data(country.cities)
-    .transition()
-    .duration(2000)
-    .attr("cx", d => xScale(d.labourForce))
-    .attr("cy", d => yScale(d.gdp))
-    .attr("r", d => Math.sqrt(d.population) * 0.01);
-  }
+let sliderYear = document.getElementById("slider").value;
+slider.onchange = () => {
+  playSvg = false;
+  checkIcon(playSvg);
+  sliderYear = document.getElementById("slider").value;
+  updateDataset();
 }
 
-function checkIcon(playSvg){
-  if(playSvg===true){
+function checkIcon(playSvg) {
+  if (playSvg === true) {
     document.getElementById("playButton").classList.remove("play");
     document.getElementById("playButton").classList.add("pause");
-  }else{
+  } else {
     document.getElementById("playButton").classList.remove("pause");
     document.getElementById("playButton").classList.add("play");
   }
