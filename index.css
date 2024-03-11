@@ -37,7 +37,7 @@ main {
 
 .header {
   background: url(./header.png) no-repeat center center/cover;
-  height: 500px;
+  height: 600px;
   width: 100%;
   justify-content: end;
   display: flex;
@@ -63,7 +63,14 @@ main {
   align-items: center;
   padding: 35px 0px;
   font-family: "Space Mono", monospace;
+  gap: 10px;
+}
 
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 20px;
 }
 
 h1, h2 {
@@ -83,6 +90,7 @@ h1, h2 {
   justify-content: center;
   align-items: center;
   gap: 10px 50px;
+  margin-top: 50px;
 }
 
 /*
@@ -91,7 +99,7 @@ h1, h2 {
 }
 */
 .visualisation-content {
-  width: 850px;
+  width: 100%;
 }
 
 .visualisation ul {
@@ -123,7 +131,7 @@ h4 {
 }
 
 .draft {
-  height: 50vh;
+  height: 500px;
 }
 
 .sliderContainer{
@@ -186,12 +194,22 @@ h4 {
   height: 400px;
   background-color: #7fca7e;
   width: 100vw;
+  display: flex;
+  align-items: center;
 }
 
 .imgBreaker {
   position: absolute;
   left: 0;
   height: 400px;
+}
+
+.imgBreakerText {
+  font-size: 50px;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  left: 40%;
 }
 
 .countryTable {
