@@ -111,8 +111,6 @@ function updateDataset() {
     setTimeout(updateDataset, 2000);
   } else{
     currentYear = String(document.getElementById("slider").value);
-    yearData = dataset.find(d => d.year === currentYear);
-    yearText.text("Year: " + currentYear);
   }
 
   yearData = dataset.find(d => d.year === currentYear);
@@ -157,11 +155,9 @@ function renderLegend() {
   .text(d => d);
 }
 
-let sliderYear = document.getElementById("slider").value;
 slider.onchange = () => {
   playSvg = false;
   checkIcon(playSvg);
-  sliderYear = document.getElementById("slider").value;
   updateDataset();
 }
 
