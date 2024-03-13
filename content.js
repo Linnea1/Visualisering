@@ -16,7 +16,7 @@ function createCountryTable(dataset) {
     const countryName = document.createElement("p");
     countryName.textContent = country.name;
     div.appendChild(countryName);
-
+ 
     const citiesList = document.createElement("ul");
     country.cities.forEach((city) => {
       const cityItem = document.createElement("li");

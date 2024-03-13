@@ -23,16 +23,6 @@ const dataset = [
         ]
       },
       {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 52245, labourForce: 699720, population: 1482519},
-          { name: "Mito", gdp: 24762, labourForce: 355680, population: 742045},
-          { name: "Nagoya", gdp: 352597, labourForce: 4298650, population: 8455361 },
-          { name: "Fukuoka", gdp: 85910, labourForce: 1284040, population: 2680921 },
-          { name: "Sapporo", gdp: 74740, labourForce: 1077120, population: 2296381 },
-        ]
-      },
-      {
         name: "Poland",
         cities: [
           { name: "Warsaw", gdp: 104616, labourForce: 5171, population: 2904456 },
@@ -75,16 +65,6 @@ const dataset = [
           { name: "Valencia", gdp: 52466, labourForce: 782856, population: 1620671 },
           { name: "Seville", gdp: 41364, labourForce: 641775, population: 1426529 },
           { name: "Saragossa", gdp: 27144, labourForce: 332573, population: 705452 },
-        ]
-      },
-      {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 54567, labourForce: 701680, population: 1481489},
-          { name: "Mito", gdp: 25217, labourForce: 356400, population: 738569},
-          { name: "Nagoya", gdp: 364203, labourForce: 4310190, population: 8510436 },
-          { name: "Fukuoka", gdp: 87882, labourForce: 1282160, population: 2676229 },
-          { name: "Sapporo", gdp: 73750, labourForce: 1077120, population: 2289871 },
         ]
       },
       {
@@ -133,16 +113,6 @@ const dataset = [
         ]
       },
       {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 56262, labourForce: 689920, population: 1480460},
-          { name: "Mito", gdp: 27589, labourForce: 350640, population: 737825},
-          { name: "Nagoya", gdp: 403442, labourForce: 4315960, population: 8557483 },
-          { name: "Fukuoka", gdp: 89548, labourForce: 1278400, population: 2677714 },
-          { name: "Sapporo", gdp: 73858, labourForce: 1056720, population: 2278885 },
-        ]
-      },
-      {
         name: "Poland",
         cities: [
           { name: "Warsaw", gdp: 120062, labourForce: 5148, population: 2935468 },
@@ -185,16 +155,6 @@ const dataset = [
           { name: "Valencia", gdp: 58051, labourForce: 845870, population: 1662180 },
           { name: "Seville", gdp: 44797, labourForce: 691179, population: 1456716 },
           { name: "Saragossa", gdp: 29953, labourForce: 378045, population: 723827 },
-        ]
-      },
-      {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 59010, labourForce: 678160, population: 1479430},
-          { name: "Mito", gdp: 28841, labourForce: 349920, population: 737080},
-          { name: "Nagoya", gdp: 414748, labourForce: 4310190, population: 8604216 },
-          { name: "Fukuoka", gdp: 92154, labourForce: 1257720, population: 2678026 },
-          { name: "Sapporo", gdp: 73693, labourForce: 1056720, population: 2266272 },
         ]
       },
       {
@@ -243,16 +203,6 @@ const dataset = [
         ]
       },
       {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 54874, labourForce: 678160, population: 1479430},
-          { name: "Mito", gdp: 28242, labourForce: 345600, population: 737080},
-          { name: "Nagoya", gdp: 376782, labourForce: 4287110, population: 8639935 },
-          { name: "Fukuoka", gdp: 89377, labourForce: 1248320, population: 2676508 },
-          { name: "Sapporo", gdp: 71730, labourForce: 1044480, population: 2252032 },
-        ]
-      },
-      {
         name: "Poland",
         cities: [
           { name: "Warsaw", gdp: 133349, labourForce: 5646, population: 2972647 },
@@ -295,16 +245,6 @@ const dataset = [
           { name: "Valencia", gdp: 55491, labourForce: 857556, population: 1722393 },
           { name: "Seville", gdp: 43262, labourForce: 722423, population: 1500880 },
           { name: "Saragossa", gdp: 28912, labourForce: 381808, population: 754093 },
-        ]
-      },
-      {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 52260, labourForce: 676200, population: 1477370},
-          { name: "Mito", gdp: 26863, labourForce: 342000, population: 735839},
-          { name: "Nagoya", gdp: 361470, labourForce: 4252490, population: 8646512 },
-          { name: "Fukuoka", gdp: 89659, labourForce: 1242680, population: 2675319 },
-          { name: "Sapporo", gdp: 71207, labourForce: 1036320, population: 2240639 },
         ]
       },
       {
@@ -353,16 +293,6 @@ const dataset = [
         ]
       },
       {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 53136, labourForce: 666400, population: 1474280},
-          { name: "Mito", gdp: 28222, labourForce: 340560, population: 734846},
-          { name: "Nagoya", gdp: 364722, labourForce: 4223640, population: 8629765 },
-          { name: "Fukuoka", gdp: 93252, labourForce: 1250200, population: 2684483 },
-          { name: "Sapporo", gdp: 72188, labourForce: 1036320, population: 2240232 },
-        ]
-      },
-      {
         name: "Poland",
         cities: [
           { name: "Warsaw", gdp: 147662, labourForce: 1423899, population: 2985889 },
@@ -405,16 +335,6 @@ const dataset = [
           { name: "Valencia", gdp: 54955, labourForce: 857755, population: 1726086 },
           { name: "Seville", gdp: 42839, labourForce: 737094, population: 1527575 },
           { name: "Saragossa", gdp: 28622, labourForce: 376320, population: 759652 },
-        ]
-      },
-      {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 55424, labourForce: 650720, population: 1473250},
-          { name: "Mito", gdp: 29762, labourForce: 333360, population: 737328},
-          { name: "Nagoya", gdp: 380949, labourForce: 4200560, population: 8625333 },
-          { name: "Fukuoka", gdp: 94161, labourForce: 1246440, population: 2687469 },
-          { name: "Sapporo", gdp: 73171, labourForce: 1024080, population: 2232095 },
         ]
       },
       {
@@ -463,16 +383,6 @@ const dataset = [
         ]
       },
       {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 53489, labourForce: 648760, population: 1470161},
-          { name: "Mito", gdp: 29422, labourForce: 331920, population: 734349},
-          { name: "Nagoya", gdp: 398911, labourForce: 4137090, population: 8626441 },
-          { name: "Fukuoka", gdp: 93307, labourForce: 1235160, population: 2689783 },
-          { name: "Sapporo", gdp: 73125, labourForce: 1007760, population: 2221516 },
-        ]
-      },
-      {
         name: "Poland",
         cities: [
           { name: "Warsaw", gdp: 157360, labourForce: 1563549, population: 3035975 },
@@ -515,16 +425,6 @@ const dataset = [
           { name: "Valencia", gdp: 51961, labourForce: 837437, population: 1726103 },
           { name: "Seville", gdp: 40533, labourForce: 738362, population: 1540296 },
           { name: "Saragossa", gdp: 27266, labourForce: 379221, population: 769657 },
-        ]
-      },
-      {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 54730, labourForce: 642880, population: 1466556},
-          { name: "Mito", gdp: 29263, labourForce: 328320, population: 730625},
-          { name: "Nagoya", gdp: 410294, labourForce: 4119780, population: 8632099 },
-          { name: "Fukuoka", gdp: 94854, labourForce: 1225760, population: 2691769 },
-          { name: "Sapporo", gdp: 74690, labourForce: 991440, population: 2209717 },
         ]
       },
       {
@@ -573,16 +473,6 @@ const dataset = [
         ]
       },
       {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 54730, labourForce: 638960, population: 1462437},
-          { name: "Mito", gdp: 29263, labourForce: 323280, population: 727646},
-          { name: "Nagoya", gdp: 410516, labourForce: 4096700, population: 8633991 },
-          { name: "Fukuoka", gdp: 94454, labourForce: 1218240, population: 2691347 },
-          { name: "Sapporo", gdp: 74810, labourForce: 975120, population: 2197028 },
-        ]
-      },
-      {
         name: "Poland",
         cities: [
           { name: "Warsaw", gdp: 167694, labourForce: 1580280, population: 3069387 },
@@ -625,16 +515,6 @@ const dataset = [
           { name: "Valencia", gdp: 54580, labourForce: 824422, population: 1717473 },
           { name: "Seville", gdp: 42442, labourForce: 747878, population: 1542162 },
           { name: "Saragossa", gdp: 28252, labourForce: 368245, population: 753884 },
-        ]
-      },
-      {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 58142, labourForce: 674820, population: 1458809        },
-          { name: "Mito", gdp: 30236, labourForce: 323280, population:724667},
-          { name: "Nagoya", gdp: 413553, labourForce: 4062080, population: 8639205 },
-          { name: "Fukuoka", gdp: 95805, labourForce: 1212600, population: 2708075 },
-          { name: "Sapporo", gdp: 75427, labourForce: 962880, population: 2200555 },
         ]
       },
       {
@@ -683,16 +563,6 @@ const dataset = [
         ]
       },
       {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 58344, labourForce: 637000, population: 1460002},
-          { name: "Mito", gdp: 30279, labourForce: 320400, population: 722741},
-          { name: "Nagoya", gdp: 411058, labourForce: 4079390, population: 8652554 },
-          { name: "Fukuoka", gdp: 96528, labourForce: 1206960, population: 2726887 },
-          { name: "Sapporo", gdp: 75135, labourForce: 962880, population: 2204708 },
-        ]
-      },
-      {
         name: "Poland",
         cities: [
           { name: "Warsaw", gdp: 180338, labourForce: 1446514, population: 3110666 },
@@ -738,16 +608,6 @@ const dataset = [
         ]
       },
       {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 58638, labourForce: 640920, population: 1462229},
-          { name: "Mito", gdp: 32037, labourForce: 318960, population: 720400},
-          { name: "Nagoya", gdp: 420635, labourForce: 4102470, population: 8669761 },
-          { name: "Fukuoka", gdp: 98624, labourForce: 1206960, population: 2746439 },
-          { name: "Sapporo", gdp: 76505, labourForce: 958800, population: 2209107 },
-        ]
-      },
-      {
         name: "Poland",
         cities: [
           { name: "Warsaw", gdp: 191493, labourForce: 1445460, population: 3132386 },
@@ -790,16 +650,6 @@ const dataset = [
           { name: "Valencia", gdp: 57699, labourForce: 825086, population: 1733606 },
           { name: "Seville", gdp: 45855, labourForce: 736776, population: 1545862 },
           { name: "Saragossa", gdp: 31386, labourForce: 368637, population: 759060 },
-        ]
-      },
-      {
-        name: "Japan",
-        cities: [
-          { name: "Hiroshima", gdp: 58216, labourForce: 646800, population: 1466517},
-          { name: "Mito", gdp: 32579, labourForce: 321120, population: 716515},
-          { name: "Nagoya", gdp: 428132, labourForce: 4142860, population: 8681708 },
-          { name: "Fukuoka", gdp: 99925, labourForce: 1214480, population: 2766437 },
-          { name: "Sapporo", gdp: 77230, labourForce: 966960, population: 2212685 },
         ]
       },
       {

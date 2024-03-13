@@ -79,6 +79,7 @@ function renderGraph() {
     .attr("fill", colorScale(country.name))
     .append("title")
     .text(d => d.name);
+    console.log(country.cities)
   }
 
   svg.selectAll("circle").sort((a, b) => {
